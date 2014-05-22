@@ -8,6 +8,12 @@
 
 #import "RWTViewController.h"
 #import "RWTMyScene.h"
+#import "RWTLevel.h"
+
+@interface RWTViewController()
+@property (strong, nonatomic) RWTLevel *level;
+@property (strong, nonatomic) RWTMyScene *scene;
+@end
 
 @implementation RWTViewController
 
@@ -17,29 +23,35 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.multipleTouchEnabled = NO;
     
     // Create and configure the scene.
-    SKScene * scene = [RWTMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene = [RWTMyScene sceneWithSize:skView.bounds.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    self.level = [[RWTLevel alloc] init];
+    self.scene.level = self.level;
+    
+    [skView presentScene:self.scene];
+    
+    [self beginGame];
 }
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+
+- (void)beginGame
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
+    [self shuffle];
+}
+
+- (void)shuffle
+{
+    NSSet *newCookies = [self.level shuffle];
+    [self.scene addSpriteForCookies:newCookies];
 }
 
 - (void)didReceiveMemoryWarning

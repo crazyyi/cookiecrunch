@@ -17,13 +17,15 @@
 		A39D1CA6192DD09200F35FAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39D1CA4192DD09200F35FAC /* Main.storyboard */; };
 		A39D1CA9192DD09200F35FAC /* RWTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39D1CA8192DD09200F35FAC /* RWTViewController.m */; };
 		A39D1CAC192DD09200F35FAC /* RWTMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A39D1CAB192DD09200F35FAC /* RWTMyScene.m */; };
-		A39D1CAE192DD09200F35FAC /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A39D1CAD192DD09200F35FAC /* Spaceship.png */; };
 		A39D1CB0192DD09200F35FAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39D1CAF192DD09200F35FAC /* Images.xcassets */; };
 		A39D1CB7192DD09200F35FAC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D1CB6192DD09200F35FAC /* XCTest.framework */; };
 		A39D1CB8192DD09200F35FAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D1C90192DD09200F35FAC /* Foundation.framework */; };
 		A39D1CB9192DD09200F35FAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D1C94192DD09200F35FAC /* UIKit.framework */; };
 		A39D1CC1192DD09200F35FAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39D1CBF192DD09200F35FAC /* InfoPlist.strings */; };
 		A39D1CC3192DD09200F35FAC /* CookieCrunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A39D1CC2192DD09200F35FAC /* CookieCrunchTests.m */; };
+		A39D1CCD192DD0AA00F35FAC /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A39D1CCC192DD0AA00F35FAC /* Sprites.atlas */; };
+		A39D1CD0192DD32500F35FAC /* RWTCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = A39D1CCF192DD32500F35FAC /* RWTCookie.m */; };
+		A39D1CD3192DD35500F35FAC /* RWTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A39D1CD2192DD35500F35FAC /* RWTLevel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +55,17 @@
 		A39D1CA8192DD09200F35FAC /* RWTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTViewController.m; sourceTree = "<group>"; };
 		A39D1CAA192DD09200F35FAC /* RWTMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTMyScene.h; sourceTree = "<group>"; };
 		A39D1CAB192DD09200F35FAC /* RWTMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTMyScene.m; sourceTree = "<group>"; };
-		A39D1CAD192DD09200F35FAC /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A39D1CAF192DD09200F35FAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A39D1CB5192DD09200F35FAC /* CookieCrunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookieCrunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39D1CB6192DD09200F35FAC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A39D1CBE192DD09200F35FAC /* CookieCrunchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CookieCrunchTests-Info.plist"; sourceTree = "<group>"; };
 		A39D1CC0192DD09200F35FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A39D1CC2192DD09200F35FAC /* CookieCrunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieCrunchTests.m; sourceTree = "<group>"; };
+		A39D1CCC192DD0AA00F35FAC /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		A39D1CCE192DD32500F35FAC /* RWTCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTCookie.h; sourceTree = "<group>"; };
+		A39D1CCF192DD32500F35FAC /* RWTCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTCookie.m; sourceTree = "<group>"; };
+		A39D1CD1192DD35500F35FAC /* RWTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTLevel.h; sourceTree = "<group>"; };
+		A39D1CD2192DD35500F35FAC /* RWTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTLevel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +134,11 @@
 				A39D1CA8192DD09200F35FAC /* RWTViewController.m */,
 				A39D1CAA192DD09200F35FAC /* RWTMyScene.h */,
 				A39D1CAB192DD09200F35FAC /* RWTMyScene.m */,
-				A39D1CAD192DD09200F35FAC /* Spaceship.png */,
+				A39D1CCE192DD32500F35FAC /* RWTCookie.h */,
+				A39D1CCF192DD32500F35FAC /* RWTCookie.m */,
+				A39D1CD1192DD35500F35FAC /* RWTLevel.h */,
+				A39D1CD2192DD35500F35FAC /* RWTLevel.m */,
+				A39D1CCC192DD0AA00F35FAC /* Sprites.atlas */,
 				A39D1CAF192DD09200F35FAC /* Images.xcassets */,
 				A39D1C99192DD09200F35FAC /* Supporting Files */,
 			);
@@ -243,7 +253,7 @@
 			files = (
 				A39D1C9D192DD09200F35FAC /* InfoPlist.strings in Resources */,
 				A39D1CB0192DD09200F35FAC /* Images.xcassets in Resources */,
-				A39D1CAE192DD09200F35FAC /* Spaceship.png in Resources */,
+				A39D1CCD192DD0AA00F35FAC /* Sprites.atlas in Resources */,
 				A39D1CA6192DD09200F35FAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39D1CD3192DD35500F35FAC /* RWTLevel.m in Sources */,
 				A39D1CAC192DD09200F35FAC /* RWTMyScene.m in Sources */,
 				A39D1CA9192DD09200F35FAC /* RWTViewController.m in Sources */,
 				A39D1CA3192DD09200F35FAC /* RWTAppDelegate.m in Sources */,
+				A39D1CD0192DD32500F35FAC /* RWTCookie.m in Sources */,
 				A39D1C9F192DD09200F35FAC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

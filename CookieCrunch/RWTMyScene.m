@@ -7,43 +7,57 @@
 //
 
 #import "RWTMyScene.h"
+#import "RWTCookie.h"
+#import "RWTLevel.h"
+
+
+static const CGFloat TileWidth = 32.0;
+static const CGFloat TileHeight = 36.0;
+
+@interface RWTMyScene()
+{
+    
+}
+
+@property (strong, nonatomic) SKNode *gameLayer;
+@property (strong, nonatomic) SKNode *cookiesLayer;
+
+@end
 
 @implementation RWTMyScene
 
--(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
+- (id)initWithSize:(CGSize)size {
+    if ((self = [super initWithSize:size])) {
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.anchorPoint = CGPointMake(0.5, 0.5);
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
+        [self addChild:background];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        self.gameLayer = [SKNode node];
+        [self addChild:self.gameLayer];
         
-        [self addChild:myLabel];
+        CGPoint layerPosition = CGPointMake(-TileWidth*NumColumns/2, -TileHeight*NumRows/2);
+        self.cookiesLayer = [SKNode node];
+        self.cookiesLayer.position = layerPosition;
+        
+        [self.gameLayer addChild:self.cookiesLayer];
     }
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+- (void)addSpriteForCookies:(NSSet *)cookies
+{
+    for (RWTCookie *cookie in cookies) {
+        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:[cookie spriteName]];
+        NSLog(@"Cookie name = %@", cookie.spriteName);
+        sprite.position = [self pointForColumn:cookie.column row:cookie.row];
     }
+}
+
+- (CGPoint)pointForColumn:(NSInteger)column row:(NSInteger)row
+{
+    return CGPointMake(column*TileWidth + TileWidth/2, row*TileHeight + TileHeight/2);
 }
 
 -(void)update:(CFTimeInterval)currentTime {
