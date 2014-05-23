@@ -30,8 +30,9 @@
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    self.level = [[RWTLevel alloc] init];
+    self.level = [[RWTLevel alloc] initWithFile:@"Level_1"];
     self.scene.level = self.level;
+    [self.scene addTiles];
     
     [skView presentScene:self.scene];
     

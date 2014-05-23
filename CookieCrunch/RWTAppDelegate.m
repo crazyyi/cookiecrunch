@@ -7,7 +7,6 @@
 //
 
 #import "RWTAppDelegate.h"
-#import "DDLog.h"
 
 @implementation RWTAppDelegate
 
