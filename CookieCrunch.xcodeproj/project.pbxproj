@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5639B80B57BD4440A1C72D09 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9DCC91EEC24F26BCA308DC /* libPods.a */; };
+		A38BCAA3193013D500E924CC /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A38BCAA2193013D500E924CC /* RWTSwap.m */; };
+		A38BCAAB193087CC00E924CC /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA5193087CC00E924CC /* Chomp.wav */; };
+		A38BCAAC193087CC00E924CC /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA6193087CC00E924CC /* Drip.wav */; };
+		A38BCAAD193087CC00E924CC /* Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA7193087CC00E924CC /* Error.wav */; };
+		A38BCAAE193087CC00E924CC /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA8193087CC00E924CC /* Ka-Ching.wav */; };
+		A38BCAAF193087CC00E924CC /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA9193087CC00E924CC /* Mining by Moonlight.mp3 */; };
+		A38BCAB0193087CC00E924CC /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAAA193087CC00E924CC /* Scrape.wav */; };
+		A38BCAB31930C87A00E924CC /* RWTChain.m in Sources */ = {isa = PBXBuildFile; fileRef = A38BCAB21930C87A00E924CC /* RWTChain.m */; };
 		A39D1C91192DD09200F35FAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D1C90192DD09200F35FAC /* Foundation.framework */; };
 		A39D1C93192DD09200F35FAC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D1C92192DD09200F35FAC /* CoreGraphics.framework */; };
 		A39D1C95192DD09200F35FAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D1C94192DD09200F35FAC /* UIKit.framework */; };
@@ -47,6 +55,16 @@
 
 /* Begin PBXFileReference section */
 		7128FE08446E42CA9AF0D076 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A38BCAA1193013D500E924CC /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSwap.h; sourceTree = "<group>"; };
+		A38BCAA2193013D500E924CC /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSwap.m; sourceTree = "<group>"; };
+		A38BCAA5193087CC00E924CC /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chomp.wav; sourceTree = "<group>"; };
+		A38BCAA6193087CC00E924CC /* Drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drip.wav; sourceTree = "<group>"; };
+		A38BCAA7193087CC00E924CC /* Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Error.wav; sourceTree = "<group>"; };
+		A38BCAA8193087CC00E924CC /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
+		A38BCAA9193087CC00E924CC /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
+		A38BCAAA193087CC00E924CC /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
+		A38BCAB11930C87A00E924CC /* RWTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTChain.h; sourceTree = "<group>"; };
+		A38BCAB21930C87A00E924CC /* RWTChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTChain.m; sourceTree = "<group>"; };
 		A39D1C8D192DD09200F35FAC /* CookieCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39D1C90192DD09200F35FAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A39D1C92192DD09200F35FAC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,6 +128,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A38BCAA4193087CC00E924CC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A38BCAA5193087CC00E924CC /* Chomp.wav */,
+				A38BCAA6193087CC00E924CC /* Drip.wav */,
+				A38BCAA7193087CC00E924CC /* Error.wav */,
+				A38BCAA8193087CC00E924CC /* Ka-Ching.wav */,
+				A38BCAA9193087CC00E924CC /* Mining by Moonlight.mp3 */,
+				A38BCAAA193087CC00E924CC /* Scrape.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		A39D1C84192DD09200F35FAC = {
 			isa = PBXGroup;
 			children = (
@@ -153,12 +184,17 @@
 				A39D1CA8192DD09200F35FAC /* RWTViewController.m */,
 				A39D1CAA192DD09200F35FAC /* RWTMyScene.h */,
 				A39D1CAB192DD09200F35FAC /* RWTMyScene.m */,
+				A38BCAB11930C87A00E924CC /* RWTChain.h */,
+				A38BCAB21930C87A00E924CC /* RWTChain.m */,
 				A39D1CCE192DD32500F35FAC /* RWTCookie.h */,
 				A39D1CCF192DD32500F35FAC /* RWTCookie.m */,
 				A39D1CD1192DD35500F35FAC /* RWTLevel.h */,
 				A39D1CD2192DD35500F35FAC /* RWTLevel.m */,
 				A3B44332192EF65B00E24057 /* RWTTile.h */,
 				A3B44333192EF65B00E24057 /* RWTTile.m */,
+				A38BCAA1193013D500E924CC /* RWTSwap.h */,
+				A38BCAA2193013D500E924CC /* RWTSwap.m */,
+				A38BCAA4193087CC00E924CC /* Sounds */,
 				A3B44327192EF5C100E24057 /* Levels */,
 				A39D1CCC192DD0AA00F35FAC /* Sprites.atlas */,
 				A39D1CAF192DD09200F35FAC /* Images.xcassets */,
@@ -288,10 +324,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A39D1C9D192DD09200F35FAC /* InfoPlist.strings in Resources */,
+				A38BCAAC193087CC00E924CC /* Drip.wav in Resources */,
 				A3B44331192EF5C100E24057 /* Level_4.json in Resources */,
+				A38BCAAD193087CC00E924CC /* Error.wav in Resources */,
 				A3B4432F192EF5C100E24057 /* Level_2.json in Resources */,
+				A38BCAB0193087CC00E924CC /* Scrape.wav in Resources */,
 				A3B4432D192EF5C100E24057 /* Level_0.json in Resources */,
+				A38BCAAB193087CC00E924CC /* Chomp.wav in Resources */,
+				A38BCAAF193087CC00E924CC /* Mining by Moonlight.mp3 in Resources */,
 				A39D1CB0192DD09200F35FAC /* Images.xcassets in Resources */,
+				A38BCAAE193087CC00E924CC /* Ka-Ching.wav in Resources */,
 				A39D1CCD192DD0AA00F35FAC /* Sprites.atlas in Resources */,
 				A3B4432E192EF5C100E24057 /* Level_1.json in Resources */,
 				A3B44330192EF5C100E24057 /* Level_3.json in Resources */,
@@ -351,6 +393,8 @@
 				A39D1CAC192DD09200F35FAC /* RWTMyScene.m in Sources */,
 				A39D1CA9192DD09200F35FAC /* RWTViewController.m in Sources */,
 				A39D1CA3192DD09200F35FAC /* RWTAppDelegate.m in Sources */,
+				A38BCAA3193013D500E924CC /* RWTSwap.m in Sources */,
+				A38BCAB31930C87A00E924CC /* RWTChain.m in Sources */,
 				A3B44334192EF65B00E24057 /* RWTTile.m in Sources */,
 				A39D1CD0192DD32500F35FAC /* RWTCookie.m in Sources */,
 				A39D1C9F192DD09200F35FAC /* main.m in Sources */,

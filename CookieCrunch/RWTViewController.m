@@ -34,6 +34,25 @@
     self.scene.level = self.level;
     [self.scene addTiles];
     
+    id block = ^(RWTSwap *swap) {
+        self.view.userInteractionEnabled = NO;
+        
+        if ([self.level isPossibleSwap:swap]) {
+            [self.level performSwap:swap];
+            [self.scene animateSwap:swap completion:^{
+                self.view.userInteractionEnabled = YES;
+            }];
+        } else {
+            [self.scene animateInvalidSwap:swap completion:^{
+                self.view.userInteractionEnabled = YES;
+            }];
+            
+        }
+        
+    };
+    
+    self.scene.swipeHandler = block;
+    
     [skView presentScene:self.scene];
     
     [self beginGame];
