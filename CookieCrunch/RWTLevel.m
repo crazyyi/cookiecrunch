@@ -232,6 +232,54 @@
     return set;
 }
 
+- (NSSet *)detectVerticalMatches {
+    NSMutableSet *set = [NSMutableSet set];
+    
+    for (NSInteger column = 0; column < NumColumns; column++) {
+        for (NSInteger row = 0; row < NumRows - 2; ) {
+            if (_cookies[column][row] != nil) {
+                NSUInteger matchType = _cookies[column][row].cookieType;
+                
+                if (_cookies[column][row + 1].cookieType == matchType &&
+                    _cookies[column][row + 2].cookieType == matchType) {
+                    RWTChain *chain = [[RWTChain alloc] init];
+                    chain.chainType = ChainTypeVertical;
+                    
+                    do {
+                        [chain addCookie:_cookies[column][row]];
+                        row += 1;
+                    } while (row < NumRows && _cookies[column][row].cookieType == matchType);
+                    
+                    [set addObject:chain];
+                    continue;
+                }
+            }
+            
+            row += 1;
+        }
+    }
+    
+    return set;
+}
+
+- (NSSet *)removeMatches {
+    NSSet *horizontalChains = [self detectHorizontalMatches];
+    NSSet *verticalChains = [self detectVerticalMatches];
+    
+    [self removeCookies:horizontalChains];
+    [self removeCookies:verticalChains];
+    
+    return [horizontalChains setByAddingObjectsFromSet:verticalChains];
+}
+
+- (void)removeCookies:(NSSet *)chains {
+    for (RWTChain *chain in chains) {
+        for (RWTCookie *cookie in chain.cookies) {
+            _cookies[cookie.column][cookie.row] = nil;
+        }
+    }
+}
+
 - (void)performSwap:(RWTSwap *)swap
 {
     NSInteger columnA = swap.cookieA.column;
@@ -246,5 +294,37 @@
     _cookies[columnB][rowB] = swap.cookieA;
     swap.cookieA.column = columnB;
     swap.cookieA.row = rowB;
+}
+
+- (NSArray *)fillHoles
+{
+    NSMutableArray *columns = [NSMutableArray array];
+    
+    for (NSInteger column = 0; column < NumColumns; column++) {
+        NSMutableArray *array;
+        
+        for (NSInteger row = 0; row < NumRows; row++) {
+            if (_tiles[column][row] != nil && _cookies[column][row] == nil) {
+                for (NSInteger lookup = row + 1; lookup < NumRows; lookup++) {
+                    RWTCookie *cookie = _cookies[column][lookup];
+                    if (cookie != nil) {
+                        _cookies[column][lookup] = nil;
+                        _cookies[column][row] = cookie;
+                        cookie.row = row;
+                        
+                        if (array == nil) {
+                            array = [NSMutableArray array];
+                            [columns addObject:array];
+                        }
+                        [array addObject:cookie];
+                        
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    
+    return columns;
 }
 @end

@@ -18,7 +18,7 @@ static const NSInteger NumRows = 9;
 @interface RWTLevel : NSObject
 
 - (NSSet *)shuffle;
-
+- (NSArray *)fillHoles;
 - (RWTCookie *)cookieAtColumn:(NSInteger)column row:(NSInteger)row;
 
 - (instancetype)initWithFile:(NSString *)filename;

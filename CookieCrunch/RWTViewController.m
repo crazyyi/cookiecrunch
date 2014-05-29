@@ -40,6 +40,7 @@
         if ([self.level isPossibleSwap:swap]) {
             [self.level performSwap:swap];
             [self.scene animateSwap:swap completion:^{
+                [self handleMatches];
                 self.view.userInteractionEnabled = YES;
             }];
         } else {
@@ -72,6 +73,20 @@
 {
     NSSet *newCookies = [self.level shuffle];
     [self.scene addSpriteForCookies:newCookies];
+}
+
+- (void)handleMatches {
+    NSSet *chains = [self.level removeMatches];
+    
+    [self.scene animateMatchedCookies:chains completion:^{
+        
+        NSArray *columns = [self.level fillHoles];
+        
+        [self.scene animateFallingCookies:columns completion:^{
+            self.view.userInteractionEnabled = YES;
+        }];
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
