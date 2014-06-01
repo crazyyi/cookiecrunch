@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, ChainType) {
 
 @interface RWTChain : NSObject
 
+@property (assign, nonatomic) NSUInteger score;
 @property (strong, nonatomic, readonly) NSArray *cookies;
 @property (assign, nonatomic) ChainType chainType;
 

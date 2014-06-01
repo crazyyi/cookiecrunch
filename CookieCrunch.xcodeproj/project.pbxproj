@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5639B80B57BD4440A1C72D09 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9DCC91EEC24F26BCA308DC /* libPods.a */; };
+		A339AB77193A24B700FDA850 /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A339AB76193A24B700FDA850 /* Grid.atlas */; };
 		A38BCAA3193013D500E924CC /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A38BCAA2193013D500E924CC /* RWTSwap.m */; };
 		A38BCAAB193087CC00E924CC /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA5193087CC00E924CC /* Chomp.wav */; };
 		A38BCAAC193087CC00E924CC /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = A38BCAA6193087CC00E924CC /* Drip.wav */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		7128FE08446E42CA9AF0D076 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A339AB76193A24B700FDA850 /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grid.atlas; sourceTree = "<group>"; };
 		A38BCAA1193013D500E924CC /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSwap.h; sourceTree = "<group>"; };
 		A38BCAA2193013D500E924CC /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSwap.m; sourceTree = "<group>"; };
 		A38BCAA5193087CC00E924CC /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chomp.wav; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				A38BCAA2193013D500E924CC /* RWTSwap.m */,
 				A38BCAA4193087CC00E924CC /* Sounds */,
 				A3B44327192EF5C100E24057 /* Levels */,
+				A339AB76193A24B700FDA850 /* Grid.atlas */,
 				A39D1CCC192DD0AA00F35FAC /* Sprites.atlas */,
 				A39D1CAF192DD09200F35FAC /* Images.xcassets */,
 				A39D1C99192DD09200F35FAC /* Supporting Files */,
@@ -326,6 +329,7 @@
 				A39D1C9D192DD09200F35FAC /* InfoPlist.strings in Resources */,
 				A38BCAAC193087CC00E924CC /* Drip.wav in Resources */,
 				A3B44331192EF5C100E24057 /* Level_4.json in Resources */,
+				A339AB77193A24B700FDA850 /* Grid.atlas in Resources */,
 				A38BCAAD193087CC00E924CC /* Error.wav in Resources */,
 				A3B4432F192EF5C100E24057 /* Level_2.json in Resources */,
 				A38BCAB0193087CC00E924CC /* Scrape.wav in Resources */,

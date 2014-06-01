@@ -11,6 +11,7 @@
 @interface RWTLevel()
 
 @property (strong, nonatomic) NSSet *possibleSwaps;
+@property (assign, nonatomic) NSUInteger comboMultiplier;
 
 @end
 @implementation RWTLevel {
@@ -36,6 +37,9 @@
                 }
             }];
         }];
+        
+        self.targetScore = [dictionary[@"targetScore"] unsignedIntegerValue];
+        self.maximumMoves = [dictionary[@"moves"] unsignedIntegerValue];
     }
     
     return self;
@@ -269,6 +273,9 @@
     [self removeCookies:horizontalChains];
     [self removeCookies:verticalChains];
     
+    [self calculateScores:horizontalChains];
+    [self calculateScores:verticalChains];
+    
     return [horizontalChains setByAddingObjectsFromSet:verticalChains];
 }
 
@@ -326,5 +333,48 @@
     }
     
     return columns;
+}
+
+- (NSArray *)topUpCookies
+{
+    NSMutableArray *columns = [NSMutableArray array];
+    
+    NSUInteger cookieType = 0;
+    
+    for (NSInteger column = 0; column < NumColumns; column++) {
+        NSMutableArray *array;
+        
+        for (NSInteger row = NumRows - 1; row >= 0 && _cookies[column][row] == nil; row--) {
+            if (_tiles[column][row] != nil) {
+                NSUInteger newCookieType;
+                do {
+                    newCookieType = arc4random_uniform(NumCookieTypes) + 1;
+                } while (newCookieType == cookieType);
+                
+                cookieType = newCookieType;
+                RWTCookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
+                
+                if (array == nil) {
+                    array = [NSMutableArray array];
+                    [columns addObject:array];
+                }
+                
+                [array addObject:cookie];
+            }
+        }
+    }
+    
+    return columns;
+}
+
+- (void)calculateScores:(NSSet *)chains {
+    for (RWTChain *chain in chains) {
+        chain.score = 60 * ([chain.cookies count] - 2) * self.comboMultiplier;
+        self.comboMultiplier++;
+    }
+}
+
+- (void)resetComboMultiplier {
+    self.comboMultiplier = 1;
 }
 @end

@@ -17,14 +17,19 @@ static const NSInteger NumRows = 9;
 
 @interface RWTLevel : NSObject
 
+@property (assign, nonatomic) NSUInteger targetScore;
+@property (assign, nonatomic) NSUInteger maximumMoves;
+
+- (NSArray *)topUpCookies;
 - (NSSet *)shuffle;
 - (NSArray *)fillHoles;
 - (RWTCookie *)cookieAtColumn:(NSInteger)column row:(NSInteger)row;
-
+- (void)detectPossibleSwaps;
 - (instancetype)initWithFile:(NSString *)filename;
 - (RWTTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
 - (void)performSwap:(RWTSwap *)swap;
 - (BOOL)isPossibleSwap:(RWTSwap *)swap;
 - (NSSet *)removeMatches;
+- (void)resetComboMultiplier;
 
 @end
